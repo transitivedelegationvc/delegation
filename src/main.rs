@@ -603,19 +603,17 @@ pub fn main() -> Result<(), String> {
 
     type Curve = Bn254;
 
-    const DELEGATORS: &str = "DELEGATORS";
-    const PERMISSIONS: &str = "PERMISSIONS";
-    const ITERATIONS: &str = "ITERATIONS";
+    // const DELEGATORS: &str = "DELEGATORS";
+    // const PERMISSIONS: &str = "PERMISSIONS";
+    // const ITERATIONS: &str = "ITERATIONS";
 
-    let delegators = fetch_usize_env_variable(DELEGATORS)?;
-    let permissions = fetch_usize_env_variable(PERMISSIONS)?;
-    let iterations = fetch_usize_env_variable(ITERATIONS)? as i8;
-
-    /*
-        let delegators = 10;
-        let permissions = 10;
-        let iterations = 100;
-    */
+    // let delegators = fetch_usize_env_variable(DELEGATORS)?;
+    // let permissions = fetch_usize_env_variable(PERMISSIONS)?;
+    // let iterations = fetch_usize_env_variable(ITERATIONS)? as i8;
+    
+    let delegators = 10;
+    let permissions = 10;
+    let iterations = 100;
     let retain_amount = permissions / delegators;
 
     iterate_over_delegators::<Curve>(delegators, permissions, 1, iterations)?;
